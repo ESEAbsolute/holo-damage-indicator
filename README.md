@@ -35,7 +35,7 @@ Mod Menu is optional. All else is required.
 | Modrinth     |Curseforge   |
 | ------------ |------------ |
 | <a href="" target="_blank" rel="nofollow">HologramAPI</a> |<a href="" target="_blank" rel="nofollow">HologramAPI</a> |
-| <a href="https://modrinth.com/mod/cloth-config" target="_blank" rel="nofollow">Cloth Config</a> |<a href="https://www.curseforge.com/minecraft/mc-mods/cloth-config" target="_blank" rel="nofollow">Cloth Config</a> |
+| <a href="https://modrinth.com/mod/craft-config" target="_blank" rel="nofollow">Craft Config Lib</a> | <a href="https://www.curseforge.com/minecraft/mc-mods/craft-config" target="_blank" rel="nofollow">Craft Config Lib</a> |
 | <a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="nofollow">Fabric API</a> |<a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api" target="_blank" rel="nofollow">Fabric API</a> |
 | <a href="https://modrinth.com/mod/modmenu" target="_blank" rel="nofollow">Mod Menu</a> |<a href="https://www.curseforge.com/minecraft/mc-mods/modmenu" target="_blank" rel="nofollow">Mod Menu</a> |
 
@@ -44,4 +44,4 @@ Mod Menu is optional. All else is required.
 | Modrinth     |Curseforge   |
 | ------------ |------------ |
 | <a href="" target="_blank" rel="nofollow">HologramAPI</a> |<a href="" target="_blank" rel="nofollow">HologramAPI</a> |
-| <a href="https://modrinth.com/mod/cloth-config" target="_blank" rel="nofollow">Cloth Config</a> |<a href="https://www.curseforge.com/minecraft/mc-mods/cloth-config" target="_blank" rel="nofollow">Cloth Config</a> |
+| <a href="https://modrinth.com/mod/craft-config" target="_blank" rel="nofollow">Craft Config Lib</a> | <a href="https://www.curseforge.com/minecraft/mc-mods/craft-config" target="_blank" rel="nofollow">Craft Config Lib</a> |
