@@ -1,4 +1,4 @@
-package net.tricube.optimized_fullbright.platform.neoforge;
+package net.tricube.hdi.platform.neoforge;
 
 //? neoforge {
 
@@ -8,7 +8,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.tricube.optimized_fullbright.ModInit;
+import net.tricube.hdi.ModInit;
 
 @Mod(ModInit.MOD_ID)
 public class NeoforgeEntrypoint {

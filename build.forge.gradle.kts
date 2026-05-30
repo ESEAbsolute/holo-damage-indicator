@@ -26,6 +26,10 @@ platform {
 			forgeLikeVersionRange.set("[1,)")
 			slug("craft-config")
 		}
+		required("hologram_api"){
+			forgeLikeVersionRange.set("[1,)")
+			slug("hologram-api")
+		}
 	}
 }
 
@@ -73,8 +77,8 @@ repositories {
 dependencies {
 	annotationProcessor("org.spongepowered:mixin:${libs.versions.mixin.get()}:processor")
 	modImplementation("maven.modrinth:craft-config:${prop("deps.craft-config")}+${prop("deps.minecraft")}-forge")
+	modImplementation("maven.modrinth:hologram-api:${prop("deps.hologram-api")}+${prop("deps.minecraft")}-forge")
 	// implementation(libs.moulberry.mixinconstraints)
-
 	// jarJar(libs.moulberry.mixinconstraints)
 }
 

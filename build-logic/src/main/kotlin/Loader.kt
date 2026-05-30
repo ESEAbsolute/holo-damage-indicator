@@ -47,19 +47,15 @@ sealed class Loader(val id: String) {
 							put("modmenu.discord", ctx.discordUrl)
 						}
 					}
-					putJsonArray("badoptimizations:incompatibilities") {
-						add(JsonPrimitive("enable_sky_color_caching"))
-						add(JsonPrimitive("enable_lightmap_caching"))
-					}
 				},
 				description = ctx.description,
 				icon = "assets/icon.png",
 				license = ctx.licenseName,
 //				accessWidener = "aw/${ctx.currentMcVersion}.accesswidener", //uncomment if accesswidener needed
 				entrypoints = mapOf(
-					"main" to listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.FabricEntrypoint"),
-					"client" to listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.FabricClientEntrypoint"),
-					"fabric-datagen" to listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.datagen.FabricDataGeneratorEntrypoint")
+					"main" to listOf("${ctx.modGroup}.${ctx.modPackage}.platform.fabric.FabricEntrypoint"),
+					"client" to listOf("${ctx.modGroup}.${ctx.modPackage}.platform.fabric.FabricClientEntrypoint"),
+					"fabric-datagen" to listOf("${ctx.modGroup}.${ctx.modPackage}.platform.fabric.datagen.FabricDataGeneratorEntrypoint")
 				),
 				mixins = listOf("${ctx.modId}.mixins.json"),
 				depends = ctx.extension.dependencies.required.associate { it.modid.get() to it.fabricLikeVersionRange.get() },
@@ -126,14 +122,7 @@ sealed class Loader(val id: String) {
 				), dependencies = mapOf(ctx.modId to forgeDeps), mixins = listOf(ForgeMixin("${ctx.modId}.mixins.json"))
 			)
 
-			return TOML.encodeToString(manifest) + """
-
-			["badoptimizations:incompatibilities"]
-			options = [
-				"enable_sky_color_caching",
-				"enable_lightmap_caching"
-			]
-			""".trimIndent()
+			return TOML.encodeToString(manifest)
 		}
 	}
 

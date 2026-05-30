@@ -1,34 +1,47 @@
-# Optimized Fullbright
+# Holo Damage Indicator
+
+A **client-sided** mod that adds damage visualization with customizable indicators that display health changes from both damage and healing.
+
+To open config for the mod, use the command `/damageindicator` or by using Mod Menu for Fabric or the built in (neo)Forge config menu.
+
+### Features
+- **Multiple animation presets**
+- **Fully configurable text formatting**
+- **Color code support for text**
+- **Filter damage sources**
 
 
 
-## How does this mod differ from the others?
-Instead of just changing minecraft's gamma value like many other fullbright mods, this mod also completely **disables** minecraft's lighting engine. This reduces the number of lighting calculations the game has to perform, improving performance since there's no reason to compute light levels when they’re always at the maximum.
+_If you enjoy this mod, you may also be interested in my other mods in the holo series:_
 
-Because of this, F3 will display every block’s light level as 15, indicating that the mod is working.
+| **Modrinth**     |**Curseforge**   |
+| ------------ |------------ |
+|[Holo Health Indicator](https://modrinth.com/mod/holo-health-indicator)|[Holo Health Indicator](https://www.curseforge.com/minecraft/mc-mods/holo-health-indicator)|
+|[Holo Items](https://modrinth.com/mod/holo-items)|[Holo Items](https://www.curseforge.com/minecraft/mc-mods/holo-items)|
 
-![working example](https://cdn.modrinth.com/data/cached_images/cc830668bf1e7ad80eb001b5e067fe196a174b47.png)
+## Showcase
 
+![showcase](https://raw.githubusercontent.com/tricube3/holo-damage-indicator/refs/heads/master/ezgif-6ffba28fe72ce215.webp)
 
-##  Performance comparison
-With a simulated lag machine designed to cause more light updates:
+### Config
+![showcase](https://raw.githubusercontent.com/tricube3/holographic_health_indicators/refs/heads/master/configshowcase.png)
 
-(**LEFT**) Fullbright Disabled : ~210 fps
+## Dependencies
 
-‎(**RIGHT**) Fullbright Enabled : ~260fps
+### Fabric Dependencies
 
-<img src="https://cdn.modrinth.com/data/cached_images/929afcfd85d340c829b3c189ba88811b5c18dfb8_0.webp" alt="Alt text" width="50%"><img src="https://cdn.modrinth.com/data/cached_images/98ee3c6744733c62284cc1339aee1b3bafe54c17_0.webp" alt="Alt text" width="50%">
+Mod Menu is optional. All else is required.
 
-Of course, in normal gameplay the performance gap will be smaller. However, it can provide noticeable improvements in areas with huge amount of block/light updates, e.g. large scale farms that use pistons.
+| Modrinth     |Curseforge   |
+| ------------ |------------ |
+| <a href="" target="_blank" rel="nofollow">HologramAPI</a> |<a href="" target="_blank" rel="nofollow">HologramAPI</a> |
+| <a href="https://modrinth.com/mod/cloth-config" target="_blank" rel="nofollow">Cloth Config</a> |<a href="https://www.curseforge.com/minecraft/mc-mods/cloth-config" target="_blank" rel="nofollow">Cloth Config</a> |
+| <a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="nofollow">Fabric API</a> |<a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api" target="_blank" rel="nofollow">Fabric API</a> |
+| <a href="https://modrinth.com/mod/modmenu" target="_blank" rel="nofollow">Mod Menu</a> |<a href="https://www.curseforge.com/minecraft/mc-mods/modmenu" target="_blank" rel="nofollow">Mod Menu</a> |
 
-### Compatible renderers:
-- Vanilla
-- Sodium
+### (Neo)Forge Dependencies
 
-
-By default, fullbright is toggleable by using the key (**G**). It can be changed in the controls setting.
-
-_This mod is purely **visual** and does not affect any other game mechanics._
-
-
-
+| Modrinth     |Curseforge   |
+| ------------ |------------ |
+| <a href="" target="_blank" rel="nofollow">HologramAPI</a> |<a href="" target="_blank" rel="nofollow">HologramAPI</a> |
+| <a href="https://modrinth.com/mod/cloth-config" target="_blank" rel="nofollow">Cloth Config</a> |<a href="https://www.curseforge.com/minecraft/mc-mods/cloth-config" target="_blank" rel="nofollow">Cloth Config</a> |

@@ -33,6 +33,10 @@ platform {
 			slug("craft-config")
 			fabricLikeVersionRange = "*"
 		}
+		required("hologram_api"){
+			slug("hologram-api")
+			fabricLikeVersionRange = "*"
+		}
 		optional("modmenu") {}
 	}
 }
@@ -73,6 +77,7 @@ dependencies {
 	minecraft("com.mojang:minecraft:${prop("deps.minecraft")}")
 	implementation("net.fabricmc:fabric-loader:${prop("deps.fabric-loader")}")
 	implementation("maven.modrinth:craft-config:${prop("deps.craft-config")}+${prop("deps.minecraft")}-fabric")
+	implementation("maven.modrinth:hologram-api:${prop("deps.hologram-api")}+${prop("deps.minecraft")}-fabric")
 	// implementation(libs.moulberry.mixinconstraints)
 	// include(libs.moulberry.mixinconstraints)
 	implementation("net.fabricmc.fabric-api:fabric-api:${prop("deps.fabric-api")}")

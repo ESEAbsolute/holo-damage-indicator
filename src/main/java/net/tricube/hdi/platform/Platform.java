@@ -1,4 +1,4 @@
-package net.tricube.optimized_fullbright.platform;
+package net.tricube.hdi.platform;
 
 public interface Platform {
 	boolean isModLoaded(String modId);

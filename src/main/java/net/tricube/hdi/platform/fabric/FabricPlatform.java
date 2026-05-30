@@ -1,9 +1,9 @@
-package net.tricube.optimized_fullbright.platform.fabric;
+package net.tricube.hdi.platform.fabric;
 
 //? fabric {
 
 import net.fabricmc.loader.api.FabricLoader;
-import net.tricube.optimized_fullbright.platform.Platform;
+import net.tricube.hdi.platform.Platform;
 
 public class FabricPlatform implements Platform {
 

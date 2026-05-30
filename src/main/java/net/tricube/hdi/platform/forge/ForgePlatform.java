@@ -1,10 +1,12 @@
-package net.tricube.optimized_fullbright.platform.forge;
+package net.tricube.hdi.platform.forge;
 
 //? forge {
 
 /*import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.ModLoader;
 import net.minecraftforge.fml.loading.FMLLoader;
-import net.tricube.optimized_fullbright.platform.Platform;
+import net.tricube.hdi.platform.Platform;
+
 
 public class ForgePlatform implements Platform {
 

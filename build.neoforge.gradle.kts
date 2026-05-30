@@ -26,6 +26,10 @@ platform {
 			slug("craft-config")
 			forgeLikeVersionRange.set("[1,)")
 		}
+		required("hologram_api"){
+			forgeLikeVersionRange.set("[1,)")
+			slug("hologram-api")
+		}
 	}
 }
 
@@ -70,6 +74,7 @@ repositories {
 
 dependencies {
 	implementation("maven.modrinth:craft-config:${prop("deps.craft-config")}+${prop("deps.minecraft")}-neoforge")
+	implementation("maven.modrinth:hologram-api:${prop("deps.hologram-api")}+${prop("deps.minecraft")}-neoforge")
 	implementation(libs.moulberry.mixinconstraints)
 	jarJar(libs.moulberry.mixinconstraints)
 }

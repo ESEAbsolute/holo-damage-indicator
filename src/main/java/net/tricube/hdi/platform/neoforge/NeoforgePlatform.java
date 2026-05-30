@@ -1,11 +1,11 @@
-package net.tricube.optimized_fullbright.platform.neoforge;
+package net.tricube.hdi.platform.neoforge;
 
 //? neoforge {
 
 /*import net.neoforged.fml.ModList;
 import net.neoforged.fml.ModLoader;
 import net.neoforged.fml.loading.FMLLoader;
-import net.tricube.optimized_fullbright.platform.Platform;
+import net.tricube.hdi.platform.Platform;
 
 public class NeoforgePlatform implements Platform {
 
@@ -26,7 +26,7 @@ public class NeoforgePlatform implements Platform {
 
 	@Override
 	public boolean isDevelopmentEnvironment() {
-		return !FMLLoader/^? if > 1.21.7 {^/.getCurrent()/^?}^/.isProduction();
+		return !FMLLoader/^? if > 1.21.7 {^//^.getCurrent()^//^?}^/.isProduction();
 	}
 }
 *///?}
