@@ -1,12 +1,13 @@
 {
   "package": "net.tricube.hdi.mixin",
   "required": true,
-  "refmap": "hdi.mixins.refmap.json",
+  "refmap": "holo_damage_indicator.mixins.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "${java}",
   "injectors": {
     "defaultRequire": 1
   },
+
   "mixins": [],
   "client": [
     "CritMixin",
