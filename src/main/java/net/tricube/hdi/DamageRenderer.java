@@ -71,9 +71,9 @@ public class DamageRenderer {
         double spawnZ = startZ + Config.damageOffset.get() * (radius * Math.cos(phi));
 
 		float finalScale = Config.damageScale.get() * (
-				Config.dynamicDamageScale.get() && Minecraft.getInstance().player != null ?
+				Config.dynamicDamageScale.get() ?
 				Config.damageScaleFactor.get() * (float) Math.sqrt(
-						Minecraft.getInstance().player.position().distanceTo(
+						Minecraft.getInstance().gameRenderer.getMainCamera().position().distanceTo(
 								new Vec3(spawnX, spawnY, spawnZ)
 						)
 				) : 1
@@ -113,9 +113,9 @@ public class DamageRenderer {
         double spawnZ = startZ + Config.healOffset.get() * (radius * Math.cos(phi));
 
 		float finalScale = Config.healScale.get() * (
-				Config.dynamicHealScale.get() && Minecraft.getInstance().player != null ?
+				Config.dynamicHealScale.get() ?
 				Config.healScaleFactor.get() * (float) Math.sqrt(
-						Minecraft.getInstance().player.position().distanceTo(
+						Minecraft.getInstance().gameRenderer.getMainCamera().position().distanceTo(
 								new Vec3(spawnX, spawnY, spawnZ)
 						)
 				) : 1
