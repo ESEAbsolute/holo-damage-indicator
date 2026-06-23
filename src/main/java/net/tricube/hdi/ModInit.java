@@ -2,7 +2,7 @@ package net.tricube.hdi;
 
 
 import net.tricube.hdi.config.Config;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.tricube.hdi.platform.Platform;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,19 +53,19 @@ public class ModInit {
 		 *///?}
 	}
 
-	private static ResourceLocation id(String path) {
+	private static Identifier id(String path) {
 		//? >=1.21 {
-		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 		//?} < 1.21 {
-		/*return new ResourceLocation(MOD_ID, path);
+		/*return new Identifier(MOD_ID, path);
 		 *///?}
 	}
 
-	private static ResourceLocation id(String namespace, String path) {
+	private static Identifier id(String namespace, String path) {
 		//? >=1.21 {
-		return ResourceLocation.fromNamespaceAndPath(namespace, path);
+		return Identifier.fromNamespaceAndPath(namespace, path);
 		//?} < 1.21 {
-		/*return new ResourceLocation(namespace, path);
+		/*return new Identifier(namespace, path);
 		 *///?}
 	}
 

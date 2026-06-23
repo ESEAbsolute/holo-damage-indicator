@@ -70,7 +70,15 @@ public class Config {
 
 	public static final ConfigOption<Float> damageScale =
 			ConfigOption.floatOption(Component.literal("Damage Scale"), 1.0f)
-					.description(Component.literal("How big the damage indicator will be"));
+						.description(Component.literal("How big the damage indicator will be"));
+
+	public static final ConfigOption<Boolean> dynamicDamageScale =
+			ConfigOption.booleanOption(Component.literal("Dynamic Damage Scale"), true)
+						.description(Component.literal("The scale of damage indicator will be multiplied by distance"));
+
+	public static final ConfigOption<Float> damageScaleFactor =
+			ConfigOption.floatOption(Component.literal("Damage Scale Factor"), 1.0f)
+						.description(Component.literal("The increment of damage indicator scale per block"));
 
 
 	public static final ConfigOption<Boolean> healEnable =
@@ -97,6 +105,14 @@ public class Config {
 			ConfigOption.floatOption(Component.literal("Heal Scale"), 1.0f)
 					.description(Component.literal("How big the healing indicator will be"));
 
+	public static final ConfigOption<Boolean> dynamicHealScale =
+			ConfigOption.booleanOption(Component.literal("Dynamic Heal Scale"), true)
+						.description(Component.literal("The scale of healing indicator will be multiplied by distance"));
+
+	public static final ConfigOption<Float> healScaleFactor =
+			ConfigOption.floatOption(Component.literal("Heal Scale Factor"), 1.0f)
+						.description(Component.literal("The increment of healing indicator scale per block"));
+
 
 	public static final CraftConfig config = CraftConfig.create("holo_damage_indicator")
 			.title(Component.literal("Holo Damage Indicator Config"))
@@ -121,7 +137,9 @@ public class Config {
 							.option(critDamageFormat.controller(new InputFieldController<>()))
 							.option(damageLifetime.controller(new SliderController<>(0, 200)))
 							.option(damageOffset.controller(new SliderController<>(0.0f, 5.0f)))
-							.option(damageScale.controller(new SliderController<>(0.0f, 5.0f)))
+						    .option(damageScale.controller(new SliderController<>(0.0f, 5.0f)))
+						    .option(dynamicDamageScale.controller(new BooleanController()))
+						    .option(damageScaleFactor.controller(new SliderController<>(0.1f, 2.0f)))
 							.build())
 					.build())
 
@@ -133,6 +151,8 @@ public class Config {
 							.option(healLifetime.controller(new SliderController<>(0, 200)))
 							.option(healOffset.controller(new SliderController<>(0.0f, 5.0f)))
 							.option(healScale.controller(new SliderController<>(0.0f, 5.0f)))
+						    .option(dynamicHealScale.controller(new BooleanController()))
+						    .option(healScaleFactor.controller(new SliderController<>(0.1f, 2.0f)))
 							.build())
 					.build())
 

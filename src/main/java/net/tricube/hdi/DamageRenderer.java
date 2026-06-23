@@ -1,8 +1,10 @@
 package net.tricube.hdi;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.phys.Vec3;
 import net.ray.HologramAPI.Hologram;
 import net.ray.HologramAPI.HologramAPI;
 import net.tricube.hdi.config.Config;
@@ -68,10 +70,19 @@ public class DamageRenderer {
         double spawnY = startY + Config.damageOffset.get() * (radius * Math.sin(phi) * Math.sin(theta));
         double spawnZ = startZ + Config.damageOffset.get() * (radius * Math.cos(phi));
 
+		float finalScale = Config.damageScale.get() * (
+				Config.dynamicDamageScale.get() && Minecraft.getInstance().player != null ?
+				Config.damageScaleFactor.get() * (float) Math.sqrt(
+						Minecraft.getInstance().player.position().distanceTo(
+								new Vec3(spawnX, spawnY, spawnZ)
+						)
+				) : 1
+		);
+
         Hologram holo = HologramAPI.create(component, spawnX, spawnY, spawnZ)
                 .shadow(Config.shadow.get())
                 .lifetime(Config.damageLifetime.get())
-                .scale(Config.damageScale.get())
+                .scale(finalScale)
                 .renderOnTop(Config.renderInfront.get())
                 .renderDistance(Config.renderDistance.get())
                 .background(Config.background.get());
@@ -101,10 +112,19 @@ public class DamageRenderer {
         double spawnY = startY + Config.healOffset.get() * (radius * Math.sin(phi) * Math.sin(theta));
         double spawnZ = startZ + Config.healOffset.get() * (radius * Math.cos(phi));
 
+		float finalScale = Config.healScale.get() * (
+				Config.dynamicHealScale.get() && Minecraft.getInstance().player != null ?
+				Config.healScaleFactor.get() * (float) Math.sqrt(
+						Minecraft.getInstance().player.position().distanceTo(
+								new Vec3(spawnX, spawnY, spawnZ)
+						)
+				) : 1
+		);
+
         Hologram holo = HologramAPI.create(component, spawnX, spawnY, spawnZ)
                 .shadow(Config.shadow.get())
                 .lifetime(Config.healLifetime.get())
-                .scale(Config.healScale.get())
+                .scale(finalScale)
                 .renderOnTop(Config.renderInfront.get())
                 .renderDistance(Config.renderDistance.get())
                 .background(Config.background.get());;
