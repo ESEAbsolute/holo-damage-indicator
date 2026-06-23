@@ -124,7 +124,7 @@ public class Config {
 							.option(shadow.controller(new BooleanController()))
 							.option(background.controller(new BooleanController()))
 							.option(disableSelf.controller(new BooleanController()))
-							.option(renderDistance.controller(new SliderController<>(1, 128)))
+							.option(renderDistance.controller(new SliderController<>(1, 320)))
 							.option(decimal.controller(new SliderController<>(0, 5)))
 							.build())
 					.build())
