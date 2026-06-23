@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
@@ -48,12 +49,14 @@ public class DamageTracker {
         int showTicks;
         int lastSeenTick;
         boolean wasAlive;
+		boolean isHealthExceeded;
 
         EntityData(float initialHealth, float maxHealth) {
             this.lastHealth = initialHealth;
             this.lastMaxHealth = maxHealth;
             this.lastSeenTick = getCurrentTick();
             this.wasAlive = true;
+			this.isHealthExceeded = false;
         }
 
         boolean update(LivingEntity entity) {
@@ -68,6 +71,19 @@ public class DamageTracker {
                 lastHealth = currentHealth;
                 lastMaxHealth = maxHealth;
             }
+			if (currentHealth > maxHealth) {
+				isHealthExceeded = true;
+			}
+
+			if (isHealthExceeded && currentHealth == maxHealth) {
+				// for cases that entity current health larger than max health.
+				// When an entity that has 2000 health with max health 1024,
+				// the entity will receive the true health points ONLY WHEN it takes damage or takes healing;
+				// at other ticks the received health value will be only equals to its max health.
+				// Therefore, if the entity's health exceedes max health,
+				// current health that equals to max health received should be ignored.
+				return (getCurrentTick() - lastSeenTick < 100) || showTicks > 0;
+			}
 
             if (currentHealth < lastHealth) {
                 float rawDamage = lastHealth - currentHealth;
@@ -97,8 +113,7 @@ public class DamageTracker {
                 }
                 clearAllCriticalHits();
                 showTicks = 40;
-            }
-            else if (currentHealth > lastHealth) {
+            } else if (currentHealth > lastHealth) {
                 float rawHealing = currentHealth - lastHealth;
 
                 if (rawHealing > 0) {
@@ -107,7 +122,8 @@ public class DamageTracker {
                 }
                 showTicks = 40;
             }
-            lastHealth = currentHealth;
+
+			lastHealth = currentHealth;
 
             wasAlive = isAlive;
 
