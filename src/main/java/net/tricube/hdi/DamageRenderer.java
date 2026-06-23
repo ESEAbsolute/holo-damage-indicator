@@ -8,6 +8,7 @@ import net.minecraft.world.phys.Vec3;
 import net.ray.HologramAPI.Hologram;
 import net.ray.HologramAPI.HologramAPI;
 import net.tricube.hdi.config.Config;
+import net.tricube.hdi.mixin.CameraAccessor;
 
 
 import java.util.Random;
@@ -73,7 +74,8 @@ public class DamageRenderer {
 		float finalScale = Config.damageScale.get() * (
 				Config.dynamicDamageScale.get() ?
 				Config.damageScaleFactor.get() * (float) Math.sqrt(
-						Minecraft.getInstance().gameRenderer.getMainCamera().position().distanceTo(
+						((CameraAccessor) Minecraft.getInstance().gameRenderer.getMainCamera())
+								.holo_damage_indicator$getPosition().distanceTo(
 								new Vec3(spawnX, spawnY, spawnZ)
 						)
 				) : 1
@@ -115,7 +117,8 @@ public class DamageRenderer {
 		float finalScale = Config.healScale.get() * (
 				Config.dynamicHealScale.get() ?
 				Config.healScaleFactor.get() * (float) Math.sqrt(
-						Minecraft.getInstance().gameRenderer.getMainCamera().position().distanceTo(
+						((CameraAccessor) Minecraft.getInstance().gameRenderer.getMainCamera())
+								.holo_damage_indicator$getPosition().distanceTo(
 								new Vec3(spawnX, spawnY, spawnZ)
 						)
 				) : 1

@@ -1,16 +1,16 @@
 {
-  "package": "net.tricube.hdi.mixin",
-  "required": true,
-  "refmap": "holo_damage_indicator.mixins.refmap.json",
-  "minVersion": "0.8",
-  "compatibilityLevel": "${java}",
-  "injectors": {
-    "defaultRequire": 1
-  },
-
-  "mixins": [],
-  "client": [
-    "CritMixin",
-    "EntityHealthMixin"
-  ]
+    "package": "net.tricube.hdi.mixin",
+    "required": true,
+    "refmap": "holo_damage_indicator.mixins.refmap.json",
+    "minVersion": "0.8",
+    "compatibilityLevel": "${java}",
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "mixins": [],
+    "client": [
+        "CameraAccessor",
+        "CritMixin",
+        "EntityHealthMixin"
+    ]
 }
